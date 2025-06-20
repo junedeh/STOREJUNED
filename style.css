@@ -1,121 +1,90 @@
-/* style.css untuk STOREJUNED */
-
-/* Reset dasar */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #0f0f0f;
-  color: white;
-  line-height: 1.6;
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
 }
 
-header {
-  background-color: #25d366;
-  padding: 20px 40px;
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.05), #000);
+  animation: moveSmoke 20s ease-in-out infinite alternate;
+  z-index: -1;
+  filter: blur(30px);
+}
+
+@keyframes moveSmoke {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.navbar {
+  position: absolute;
+  top: 20px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding: 0 40px;
+  color: white;
+  z-index: 1;
 }
 
-.logo {
-  font-size: 24px;
+.navbar .logo {
   font-weight: bold;
-  color: #0f0f0f;
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 
-nav ul {
+.navbar ul {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
-nav ul li a {
+.navbar ul li a {
   text-decoration: none;
-  color: white;
-  font-weight: 600;
-  transition: color 0.3s;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-nav ul li a:hover {
-  color: #0f0f0f;
+.navbar ul li a:hover {
+  color: #25d366;
 }
 
 .hero {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+  padding: 0 20px;
+  color: white;
+  z-index: 1;
 }
 
 .hero h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  max-width: 700px;
+  margin-bottom: 15px;
+  line-height: 1.5;
 }
 
 .hero p {
-  font-size: 18px;
-  margin-bottom: 20px;
-  color: #bbb;
-}
-
-.btn {
-  padding: 10px 20px;
-  background-color: #25d366;
-  color: #0f0f0f;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.btn:hover {
-  background-color: #1db954;
-}
-
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 40px 20px;
-  background-color: #111;
-}
-
-.feature {
-  max-width: 300px;
-  margin: 20px;
-  padding: 20px;
-  background-color: #1c1c1c;
-  border-radius: 12px;
-  text-align: center;
-}
-
-.feature h3 {
-  color: #25d366;
-  margin-bottom: 10px;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #0f0f0f;
-  color: #666;
-  font-size: 14px;
-}
-
-@media (max-width: 768px) {
-  .features {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }
+  font-size: 1rem;
+  color: #aaa;
 }
