@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak - STOREJUNED</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">STOREJUNED</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="topup.html">Top Up</a></li>
+          <li><a href="kontak.html" class="active">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="kontak-page">
+    <section class="container">
+      <h1>Hubungi Kami</h1>
+      <p>Jika ada pertanyaan atau kendala, langsung kirim pesan lewat form di bawah ini:</p>
+
+      <form class="kontak-form">
+        <label for="nama">Nama Lengkap:</label>
+        <input type="text" id="nama" name="nama" placeholder="Nama kamu" required />
+
+        <label for="email">Email / Nomor WhatsApp:</label>
+        <input type="text" id="email" name="email" placeholder="Email atau nomor aktif" required />
+
+        <label for="pesan">Pesan:</label>
+        <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan atau kendala kamu di sini..." required></textarea>
+
+        <button type="submit" class="btn">Kirim Pesan</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 STOREJUNED. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
