@@ -1,90 +1,256 @@
+/* 🔷 Reset default browser style */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body, html {
-  height: 100%;
-  font-family: 'Segoe UI', sans-serif;
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, rgb(204, 1, 255), #00aaff, #6e00ff); /* Gradasi biru ke ungu */
   overflow: hidden;
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
+/* 🔷 Tambahin bintang-bintang */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+/* 🔷 Style header atas */
+.top-bar {
+  display: flex;
+  position: relative;
+  top: 10px;
+  width: 1350px;
+  height: 50px; 
+  border-radius: 12px;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #1d2d30, #00bfff); /* biru terang gradasi */
+  color: white;
+  margin: auto;
+  padding: 20px 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔷 Kiri (tombol menu) */
+.left .menu-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.left .menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* 🔷 Tengah (logo/tulisan FayuStore) */
+.center .logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 🔷 Kanan (ikon user) */
+.right .icon-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.right .icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* 🔷 Sidebar menu navigasi kiri */
+.sidebar {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  background: linear-gradient(135deg, #6e00ff, #00aaff);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.sidebar p a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  margin: 5px 0;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.sidebar p a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 🔷 Dropdown profil kanan */
+.dropdown {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background: linear-gradient(135deg, #6e00ff, #00aaff);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.dropdown a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  margin: 5px 0;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.dropdown a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.main-promo-wrapper {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+  padding: 20px;
+  max-width: 2000px;
+}
+
+
+/* Buat nampilin dropdown saat aktif */
+.dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Isi dropdown link */
+.dropdown a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  margin: 8px 0;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+/* Hover efek */
+.dropdown a:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateX(5px);
+}
+
+/* BOX 1: Gambar Slide */
+.image-slider-box {
+  margin-right: 10px;
+  width: 1800px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.image-slider-box img {
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.05), #000);
-  animation: moveSmoke 20s ease-in-out infinite alternate;
-  z-index: -1;
-  filter: blur(30px);
+  object-fit: cover;
+  border-radius: 12px;
 }
 
-@keyframes moveSmoke {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 100% 100%;
-  }
-}
-
-.navbar {
-  position: absolute;
-  top: 20px;
-  width: 100%;
+/* BOX 2: Login/Register di atas gambar */
+.login-box-with-bg {
   display: flex;
-  justify-content: space-between;
-  padding: 0 40px;
-  color: white;
+  justify-content: center;
+  align-items: flex-start;
+  width: 500px;
+  height: 400px;
+  background-image: url('img-samping.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* Overlay gelap agar teks terlihat */
+.login-box-with-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
-.navbar .logo {
-  font-weight: bold;
-  font-size: 20px;
-  letter-spacing: 1px;
-}
-
-.navbar ul {
-  list-style: none;
+/* Konten di atas overlay */
+.overlay-content {
+  position: relative;
+  z-index: 2;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
   gap: 20px;
 }
 
-.navbar ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.navbar ul li a:hover {
-  color: #25d366;
-}
-
-.hero {
-  height: 100%;
+/* Tombol-tombol */
+.button-group {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 20px;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.btn-login,
+.btn-register {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2);
   color: white;
-  z-index: 1;
+  transition: background-color 0.3s;
 }
 
-.hero h1 {
-  font-size: 2rem;
-  max-width: 700px;
-  margin-bottom: 15px;
-  line-height: 1.5;
-}
-
-.hero p {
-  font-size: 1rem;
-  color: #aaa;
+.btn-login:hover,
+.btn-register:hover {
+  background-color: #08e0f0;
+  color: black;
 }

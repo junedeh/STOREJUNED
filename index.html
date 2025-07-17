@@ -2,25 +2,81 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>STORE JUNED</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JS</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="background"></div>
 
-  <nav class="navbar">
-    <div class="logo">STORE JUNED</div>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="topup.html">Top Up</a></li>
-      <li><a href="kontak.html">Kontak</a></li>
-    </ul>
-  </nav>
+  <!-- Bintang-bintang random -->
+<div class="star" style="top: 10%; left: 20%;"></div>
+<div class="star" style="top: 30%; left: 50%;"></div>
+<div class="star" style="top: 70%; left: 80%;"></div>
+<div class="star" style="top: 90%; left: 10%;"></div>
+<div class="star" style="top: 40%; left: 75%;"></div>
+<div class="star" style="top: 15%; left: 60%;"></div>
+<div class="star" style="top: 10%; left: 20%;"></div>
+<div class="star" style="top: 30%; left: 50%;"></div>
+<div class="star" style="top: 70%; left: 80%;"></div>
+<div class="star" style="top: 90%; left: 10%;"></div>
+<div class="star" style="top: 40%; left: 75%;"></div>
+<div class="star" style="top: 15%; left: 60%;"></div>
+<div class="star" style="top: 10%; left: 20%;"></div>
+<div class="star" style="top: 30%; left: 50%;"></div>
+<div class="star" style="top: 70%; left: 80%;"></div>
+<div class="star" style="top: 90%; left: 10%;"></div>
+<div class="star" style="top: 40%; left: 75%;"></div>
+<div class="star" style="top: 15%; left: 60%;"></div>
+<div class="star" style="top: 10%; left: 20%;"></div>
+<div class="star" style="top: 30%; left: 50%;"></div>
+<div class="star" style="top: 70%; left: 80%;"></div>
+<div class="star" style="top: 90%; left: 10%;"></div>
+<div class="star" style="top: 40%; left: 75%;"></div>
+<div class="star" style="top: 15%; left: 60%;"></div>
 
-  <section class="hero">
-    <h1>“Ketika kamu menginginkan sesuatu,<br>semesta akan membantumu.”</h1>
-    <p>- Juned, The Diamond Seller</p>
-  </section>
+ <header class="top-bar" >
+   <div class="left">
+    <button class="menu-btn">☰</button>
+   </div>
+
+   <div class="center">
+    <div class="logo">JUNED STORE</div>
+   </div>
+
+   <div class="right">
+    <button class="icon-btn" >👤</button>
+  </div>
+ </header>
+
+ <div id="sidebar" style="display:none;" class="sidebar">
+   <p><a href="home.html">home</a></p>
+   <p><a href="game.html">game</a></p>
+   <p><a href="setting">pengaturan</a></p>
+ </div>
+
+ <div id="profile-dropdown" style="display: none;" class="dropdown">
+  <a href="login.html">Login</a>
+  <a href="akun.html">Akun Saya</a>
+</div>
+
+<div class="main-promo-wrapper">
+  <!-- BOX 1: Gambar Slide -->
+  <div class="image-slider-box">
+    <img src="img1.jpg" alt="Slide Gambar" id="slide-img">
+  </div>
+
+  <!-- BOX 2: Login/Register di atas gambar -->
+  <div class="login-box-with-bg" src="img-samping.jpg">
+    <div class="overlay-content">
+      <h2>REGISTER SEKARANG!</h2>
+      <div class="button-group">
+        <button class="btn-login">Login</button>
+        <button class="btn-register">Register</button>
+      </div>
+    </div>
+  </div>  
+</div>
+
 </body>
+<script src="script.js"></script>
 </html>
